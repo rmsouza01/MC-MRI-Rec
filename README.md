@@ -23,6 +23,10 @@ This single-coil data is meant as proof of concept for assessing the ability of 
 
 We are providing 50 (+10 for testing) T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; GE Healthcare, Waukesha, WI). Data were acquired with a 12-channel imaging coil. The inverse fast Fourier transform (iFFT) was applied to the k-space data in the readout direction. Similarly, to the single-channel coil challenge, this allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The acquisition matrix size for each channel was 256×218×170 (with a few exceptions). The reference images were reconstructed by taking the channel-wise iFFT of the collected k-spaces and combining the outputs through the conventional sum of squares algorithm.
 
+We are providing the train and validation sets. The data are split as follows:
+- Train: 40 subjects - 10,240 slices
+- Validation: 10 subjects - 2,560 slices
+- Test: 10 subjects - 2,560 slices (not provided, it will be used to test the model you submit)
 ## Download
 
 The dataset can be downloaded from the [Calgary-Campinas Dataset website](https://sites.google.com/view/calgary-campinas-dataset/home?authuser=0).
