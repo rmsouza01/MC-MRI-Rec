@@ -1,0 +1,8 @@
+*~
+*.pyc
+Scratch
+Models
+__pycache__
+.idea
+*.DS_Store
+JNotebooks/.ipynb_checkpoints
