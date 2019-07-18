@@ -1,12 +1,12 @@
 # MR-reconstruction-challenge
 
 ## General description
-The Calgary-Campinas dataset team is launching a magnetic resonance (MR) brain imaging reconstruction challenge.  The challenges has two independent components:
+The Calgary-Campinas dataset team is launching a magnetic resonance (MR) brain imaging reconstruction challenge.  The challenge has two independent components:
 
 - Single-channel coil reconstruction challenge
 - Multi-channel coil reconstruction challenge
 
-Teams are free to decide if they want to participate of just one  or both components. One of the main reasons we are launching this challenge is the lack of a good brain MR raw dataset for benchmark purposes.  Data provided here were collected as part of the ongoing Calgary Normative Study. On a yearly basis, the Calgary-Campinas team will assess the possibility/necessity of increasing the amount of data provided as part of this challenge and potentially include prospectively undersampled data.
+Teams are free to decide if they want to participate of just one  or both components. Data provided here were collected as part of the ongoing Calgary Normative Study. On a yearly basis, the Calgary-Campinas team will assess the possibility/necessity of increasing the amount of data provided as part of this challenge and potentially include prospectively undersampled data.
 
 ## Single-channel Coil Data (~8 GB uncompressed)
 
@@ -21,7 +21,7 @@ This single-coil data is meant as proof of concept for assessing the ability of 
 
 ## Multi-channel Coil Data (~55 GB uncompressed)
 
-We are providing 60 T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; GE Healthcare, Waukesha, WI). Data were acquired with a 12-channel imaging coil. The inverse fast Fourier transform (iFFT) was applied to the k-space data in the readout direction. Similarly, to the single-channel coil challenge, this allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The acquisition matrix size for each channel was 256×218×170 (with a few exceptions). The reference images were reconstructed by taking the channel-wise iFFT of the collected k-spaces and combining the outputs through the conventional sum of squares algorithm.
+We are providing 50 (+10 for testing) T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; GE Healthcare, Waukesha, WI). Data were acquired with a 12-channel imaging coil. The inverse fast Fourier transform (iFFT) was applied to the k-space data in the readout direction. Similarly, to the single-channel coil challenge, this allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The acquisition matrix size for each channel was 256×218×170 (with a few exceptions). The reference images were reconstructed by taking the channel-wise iFFT of the collected k-spaces and combining the outputs through the conventional sum of squares algorithm.
 
 ## Download
 
@@ -29,7 +29,7 @@ The dataset can be downloaded from the [Calgary-Campinas Dataset website](https:
 
 ## Code
 
-This repository has code describing the dataset parameters, how to load and reconstruct the images, and baseline reconstruction models.
+This repository has Jupyter NOtebooks describing the dataset parameters, how to load and reconstruct the images, and baseline reconstruction models.
 
 ## Questions?
 Contact: roberto.medeirosdeso@ucalgary.ca
