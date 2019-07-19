@@ -19,7 +19,7 @@ We are providing the train and validation sets. The data are split as follows:
 
 This single-coil data is meant as proof of concept for assessing the ability of using Deep Learning for MR reconstruction. If you already have experience with that, we suggest that you go straight to the multi-channel coil reconstruction challenge, which is a more realistic scenario.
 
-## Multi-channel Coil Data (~55 GB uncompressed)
+## Multi-channel Coil Data (~100 GB uncompressed)
 
 We are providing 50 (+10 for testing) T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; GE Healthcare, Waukesha, WI). Data were acquired with a 12-channel imaging coil. The inverse fast Fourier transform (iFFT) was applied to the k-space data in the readout direction. Similarly, to the single-channel coil challenge, this allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The acquisition matrix size for each channel was 256×218×170 (with a few exceptions). The reference images were reconstructed by taking the channel-wise iFFT of the collected k-spaces and combining the outputs through the conventional sum of squares algorithm.
 
