@@ -33,7 +33,7 @@ The dataset can be downloaded from the [Calgary-Campinas Dataset website](https:
 
 ## Code
 
-This repository has Jupyter NOtebooks describing the dataset parameters, how to load and reconstruct the images, and baseline reconstruction models.
+This repository has Jupyter Notebooks describing the dataset parameters, how to load and reconstruct the images, and baseline reconstruction models.
 
 ## Questions?
 Contact: roberto.medeirosdeso@ucalgary.ca
