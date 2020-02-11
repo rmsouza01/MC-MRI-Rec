@@ -47,9 +47,9 @@ reconstructing images acquired using coils with different number of channels wil
    - Modules - Python modules to help load and process the data;
    - JNotebooks
       - getting-started: Scripts illustrating how to load, visualize, and apply undersampling maks to the data. It also illustrates a simple image generator. 
-      - evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be included soon.
+      - evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be **included soon**.
       - reference: Sample code illustrating how the test set references are computed. References are available only to the challenge organizers.
-      - zero-filled-baseline: Zero-fille reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
+      - zero-filled-baseline: Zero-filled reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
       - unet-baseline (**pending**): U-net reconstruction baseline.		
 
 ## Questions?
