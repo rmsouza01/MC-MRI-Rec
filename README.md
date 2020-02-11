@@ -1,45 +1,64 @@
-# MR-reconstruction-challenge
+# Multi-channel MR Image Reconstruction Challenge (MC-MRRec)
 
-## General description
-The Calgary-Campinas dataset team is launching a magnetic resonance (MR) brain imaging reconstruction challenge.  The challenge has two independent components:
 
-- Single-channel coil reconstruction challenge
-- Multi-channel coil reconstruction challenge
+## Summary
 
-Teams are free to decide if they want to participate of just one  or both components. Data provided here were collected as part of the ongoing Calgary Normative Study. On a yearly basis, the Calgary-Campinas team will assess the possibility/necessity of increasing the amount of data provided as part of this challenge and potentially include prospectively undersampled data.
+Magnetic resonance (MR) is a sensitive diagnostic imaging modality that allows specific investigation of the
+structure and function of the brain and body. One major drawback is the overall MR acquisition time, which can
+easily exceed 30 minutes per subject. Lengthy MR acquisition times are costly (~$300 USD/per exam), increase
+susceptibility to motion artifacts, which negatively impact image quality, reduce patient throughput and
+contribute to patient discomfort. Parallel imaging (PI) and compressed sensing (CS) are two proven approaches
+that allow to speed-up MR exams by collecting fewer k-space samples than stated by the Nyquist sampling
+theorem. Deep learning methods are arguably the state-of-the-art for accelerated (i.e., from undersampled k-
+space) MR reconstruction. Many works in the literature indicate that there is potential to make MR exams up to ten times faster
+using sophisticated deep-learning-based reconstruction algorithms.To put that in perspective, in this challenge
+we use 1 mm isotropic 3D T1-weighted brain MR acquisitions that took on average nearly six minutes to be acquired. 
+Making it ten times faster would reduce the exam time to nearly 36 seconds and that is expected to have an enormous societal impact. 
+ Deep learning reconstruction are divided in four groups: k-space-domain, image-domain, domain-transform, and hybrid k-space/image-domains
+learning. At the moment, there is no clear winner among these proposed models. That happens in part due to the 
+lack of benchmark datasets that allow fair comparisons. The fastMRI (https://fastmri.org/) initiative is one good step
+in that direction, but they provide mostly 2D knee images. Our challenge is a complimentary initiative that provides
+3D brain data. Working with 3D data allows you to undersample in both the phase-encoded and the slice-encoded directions (i.e. sparser data),
+which potentially allows to further undersample k-space during acquisition.   Most works
+so far investigated models that are specific to a coil with a given number of channels. Our challenge tackles this
+issue. The goals of this challenge are:
 
-## Single-channel Coil Data (~8 GB uncompressed)
+	- Compare different deep-learning-based MR reconstruction models on a large dataset (> 200 GB);
+	- Assess reconstruction models generalizability to a new dataset with a different number of channels compared to
+the train and validation sets provided.
 
-We are providing  35 fully-sampled (+10 for testing)  T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; General Electric (GE) Healthcare, Waukesha, WI) . Data were acquired with a 12-channel imaging coil. The multi-coil k-space data was reconstructed using vendor supplied tools (Orchestra Toolbox; GE Healthcare). Coil sensitivity maps were normalized to produce a single complex-valued image set that could be back-transformed to regenerate complex k-space samples. You can see this data as a 3D acquisition in which the inverse Fourier Transform was applied on the readout direction, which essentially allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The matrix size is 256 x 256.
+The challenge is composed of two separate tracks and teams are free to decide whether to submit to just one track
+or both. We encourage teams to submit to both tracks. Each track will have a separate ranking.
 
-We are providing the train and validation sets. The data are split as follows:
-- Train: 25 subjects - 4,524 slices
-- Validation: 10 subjects - 1,700 slices
-- Test: 10 subjects - 1,700 slices (not provided, it will be used to test the model you submit)
+	-Track 01: sampling pattern masks will be provided for R={5,10} (R is a commonly used symbol to represent the
+acceleration factor) and submissions will be evaluated only on the 12-channel test data.
+	-Track 02: sampling pattern masks will be provided for R={5,10}. Submissions will be evaluated both for the 12-channel
+and 32-channel test data.
 
-This single-coil data is meant as proof of concept for assessing the ability of using Deep Learning for MR reconstruction. If you already have experience with that, we suggest that you go straight to the multi-channel coil reconstruction challenge, which is a more realistic scenario.
+In these two tracks, we expect to be able to assess MR reconstruction quality, which tends to result in
+reconstruction with noticeable loss in the high-frequency components, specially for such high acceleration rates.
+Also by having two separate tracks, we expect to be able to quantify whether a more generic model capable of
+reconstructing images acquired using coils with different number of channels will have a decreased performance
+(if any) compared to a more specific model.
 
-## Multi-channel Coil Data (~100 GB uncompressed)
+## Repository Structure
 
-We are providing 50 (+10 for testing) T1-weighted MR datasets acquired on a clinical MR scanner (Discovery MR750; GE Healthcare, Waukesha, WI). Data were acquired with a 12-channel imaging coil. The inverse fast Fourier transform (iFFT) was applied to the k-space data in the readout direction. Similarly, to the single-channel coil challenge, this allows you to treat this problem as a 2D problem while at the same time undersampling on two directions (slice encoding and phase encoding). The acquisition matrix size for each channel was 256×218×170 (with a few exceptions). The reference images were reconstructed by taking the channel-wise iFFT of the collected k-spaces and combining the outputs through the conventional sum of squares algorithm.
+	- Data - Contains the sampling pattern masks for R = 5 and R = 10;
+	- Modules - Python modules to help load and process the data;
+	- JNotebooks
+		- getting-started: Scripts illustrating how to load, visualize, and apply undersampling maks to the data. It also illustrates a simple image generator. 
+		- evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be included soon.
+		- reference: Sample code illustrating how the test set references are computed. References are available only to the challenge organizers.
+		- zero-filled-baseline: Zero-fille reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
+		- unet-baseline (**pending**): U-net reconstruction baseline.		
 
-We are providing the train and validation sets. The data are split as follows:
-- Train: 40 subjects - 10,240 slices
-- Validation: 10 subjects - 2,560 slices
-- Test: 10 subjects - 2,560 slices (not provided, it will be used to test the model you submit)
-## Download
 
-The dataset can be downloaded from the [Calgary-Campinas Dataset website](https://sites.google.com/view/calgary-campinas-dataset/home?authuser=0).
 
-## Code
 
-This repository has Jupyter Notebooks describing the dataset parameters, how to load and reconstruct the images, and baseline reconstruction models.
 
 ## Questions?
-Contact: roberto.medeirosdeso@ucalgary.ca
+
+More details about the challenge are available at the [challenge webpage](https://sites.google.com/view/calgary-campinas-dataset/home/mr-reconstruction-challenge) If you have any question or doubts, please contact Dr. Roberto Souza (roberto.medeirosdeso@ucalgary.ca). He should be able to answer them and potentially add them to the FAQ page in the website.
 
 
-## Contact information:
-roberto.medeirosdeso@ucalgary.ca
-
-Updated: 18 July 2019
+Updated: 11 February 2020
