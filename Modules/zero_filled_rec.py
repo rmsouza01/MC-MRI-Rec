@@ -23,7 +23,7 @@ def zero_filled_reconstruction(zero_filled_kspace):
     are the last dimension of the array. The input may be either complex-valued or alternate between real and imaginary channels 
     in the last array dimension.
     """
-    if np.iscomplexobj(zero_filled_kspace):
+    if not np.iscomplexobj(zero_filled_kspace):
         zero_filled_kspace = zero_filled_kspace[:,:,:,::2] + 1j*zero_filled_kspace[:,:,:,1::2] #convert real-imag to complex data
     
     return sum_of_squares(channel_wise_ifft(zero_filled_kspace)) 
