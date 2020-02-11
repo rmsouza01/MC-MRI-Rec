@@ -30,9 +30,9 @@ the train and validation sets provided.
 The challenge is composed of two separate tracks and teams are free to decide whether to submit to just one track
 or both. We encourage teams to submit to both tracks. Each track will have a separate ranking.
 
-   -Track 01: sampling pattern masks will be provided for R={5,10} (R is a commonly used symbol to represent the
+   - Track 01: sampling pattern masks will be provided for R={5,10} (R is a commonly used symbol to represent the
 acceleration factor) and submissions will be evaluated only on the 12-channel test data.
-   -Track 02: sampling pattern masks will be provided for R={5,10}. Submissions will be evaluated both for the 12-channel
+   - Track 02: sampling pattern masks will be provided for R={5,10}. Submissions will be evaluated both for the 12-channel
 and 32-channel test data.
 
 In these two tracks, we expect to be able to assess MR reconstruction quality, which tends to result in
