@@ -16,8 +16,8 @@ we use 1 mm isotropic 3D T1-weighted brain MR acquisitions that took on average 
 Making it ten times faster would reduce the exam time to nearly 36 seconds and that is expected to have an enormous societal impact. 
  Deep learning reconstruction are divided in four groups: k-space-domain, image-domain, domain-transform, and hybrid k-space/image-domains
 learning. At the moment, there is no clear winner among these proposed models. That happens in part due to the 
-lack of benchmark datasets that allow fair comparisons. The fastMRI (https://fastmri.org/) initiative is one good step
-in that direction, but they provide mostly 2D knee images. Our challenge is a complimentary initiative that provides
+lack of benchmark datasets that allow fair comparisons. The [fastMRI](https://fastmri.org/) initiative is one good step
+in that direction. Our challenge is a complimentary initiative that provides
 3D brain data. Working with 3D data allows you to undersample in both the phase-encoded and the slice-encoded directions (i.e. sparser data),
 which potentially allows to further undersample k-space during acquisition.   Most works
 so far investigated models that are specific to a coil with a given number of channels. Our challenge tackles this
