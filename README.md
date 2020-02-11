@@ -23,8 +23,8 @@ which potentially allows to further undersample k-space during acquisition.   Mo
 so far investigated models that are specific to a coil with a given number of channels. Our challenge tackles this
 issue. The goals of this challenge are:
 
-	- Compare different deep-learning-based MR reconstruction models on a large dataset (> 200 GB);
-	- Assess reconstruction models generalizability to a new dataset with a different number of channels compared to
+   - Compare different deep-learning-based MR reconstruction models on a large dataset (> 200 GB);
+   - Assess reconstruction models generalizability to a new dataset with a different number of channels compared to
 the train and validation sets provided.
 
 The challenge is composed of two separate tracks and teams are free to decide whether to submit to just one track
@@ -43,18 +43,14 @@ reconstructing images acquired using coils with different number of channels wil
 
 ## Repository Structure
 
-	- Data - Contains the sampling pattern masks for R = 5 and R = 10;
-	- Modules - Python modules to help load and process the data;
-	- JNotebooks
-		- getting-started: Scripts illustrating how to load, visualize, and apply undersampling maks to the data. It also illustrates a simple image generator. 
-		- evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be included soon.
-		- reference: Sample code illustrating how the test set references are computed. References are available only to the challenge organizers.
-		- zero-filled-baseline: Zero-fille reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
-		- unet-baseline (**pending**): U-net reconstruction baseline.		
-
-
-
-
+   - Data - Contains the sampling pattern masks for R = 5 and R = 10;
+   - Modules - Python modules to help load and process the data;
+   - JNotebooks
+      - getting-started: Scripts illustrating how to load, visualize, and apply undersampling maks to the data. It also illustrates a simple image generator. 
+      - evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be included soon.
+      - reference: Sample code illustrating how the test set references are computed. References are available only to the challenge organizers.
+      - zero-filled-baseline: Zero-fille reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
+      - unet-baseline (**pending**): U-net reconstruction baseline.		
 
 ## Questions?
 
