@@ -6,3 +6,4 @@ __pycache__
 .idea
 *.DS_Store
 JNotebooks/.ipynb_checkpoints
+JNotebooks/*/.ipynb_checkpoints
