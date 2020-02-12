@@ -46,7 +46,7 @@ reconstructing images acquired using coils with different number of channels wil
    - Data - Contains the sampling pattern masks for R = 5 and R = 10;
    - Modules - Python modules to help load and process the data;
    - JNotebooks
-      - getting-started: Scripts illustrating how to load, visualize, and apply undersampling maks to the data. It also illustrates a simple image generator. 
+      - getting-started: Scripts illustrating how to load, visualize, and apply undersampling masks to the data. It also illustrates a simple image generator. 
       - evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be **included soon**.
       - reference: Sample code illustrating how the test set references are computed. References are available only to the challenge organizers.
       - zero-filled-baseline: Zero-filled reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
