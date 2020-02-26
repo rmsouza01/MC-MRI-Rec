@@ -57,4 +57,12 @@ reconstructing images acquired using coils with different number of channels wil
 More details about the challenge are available at the [challenge webpage](https://sites.google.com/view/calgary-campinas-dataset/home/mr-reconstruction-challenge) If you have any question or doubts, please contact Dr. Roberto Souza (roberto.medeirosdeso@ucalgary.ca). He should be able to answer them and potentially add them to the FAQ page in the website.
 
 
-Updated: 11 February 2020
+## Updates
+
+- 26 February 2020
+   - Added explicit zero-filling in the slice-encoded direction after slice 145.
+
+
+
+
+
