@@ -62,7 +62,7 @@ class DataGenerator(keras.utils.Sequence):
 				else:
 					idx = int((kspace.shape[2] - self.dim[1])/2)
 					X[ii,:,:,:] = kspace[self.crop[0]+file_slice,:,idx:-idx,:]
-		X[:,:,145:,:] = 0 # Explicit zero-filling
+		X[:,:,145:,:] = 0 # Explicit zero-filling. Hard coded here for the case of 85% sampling in the slice-encode direction and 170 slices. Could be more generic
 		aux = np.fft.ifft2(X[:,:,:,::2]+1j*X[:,:,:,1::2],axes = (1,2))
 		y1[:,:,:,::2] = aux.real
 		y1[:,:,:,1::2] = aux.imag
