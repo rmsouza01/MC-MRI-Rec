@@ -59,8 +59,12 @@ More details about the challenge are available at the [challenge webpage](https:
 
 ## Updates
 
+- 27 February 2020
+   - Added sampling masks for the different matrix sizes (218x170, 218x174, 218x180).
+
 - 26 February 2020
-   - Added explicit zero-filling in the slice-encoded direction after slice 145.
+   - Added explicit zero-filling in the slice-encoded direction after 85% in the slice-encode direction (i.e, int(np.ceil(0.85*Nz))).
+
 
 
 
