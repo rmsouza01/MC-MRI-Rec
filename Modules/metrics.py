@@ -10,8 +10,9 @@ def metrics(rec,ref):
     vif = np.zeros(rec.shape[0])
     
     for ii in range(rec.shape[0]):
-        ssim[ii] = structural_similarity(ref[ii],rec[ii],data_range=(ref[ii].max()-ref[ii].min()))
-        psnr[ii] = peak_signal_noise_ratio(ref[ii],rec[ii],data_range=(ref[ii].max()-ref[ii].min()))
+        data_range = np.maximum(ref[ii].max(),rec[ii].max()) - np.minimum(ref[ii].min(),rec[ii].min())
+        ssim[ii] = structural_similarity(ref[ii],rec[ii],data_range= data_range)
+        psnr[ii] = peak_signal_noise_ratio(ref[ii],rec[ii],data_range= data_range)
         vif[ii] =  vifp(ref[ii],rec[ii],sigma_nsq = 0.4)
 
     return ssim,psnr,vif
