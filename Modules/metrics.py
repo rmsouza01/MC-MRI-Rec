@@ -12,6 +12,6 @@ def metrics(rec,ref):
     for ii in range(rec.shape[0]):
         ssim[ii] = structural_similarity(ref[ii],rec[ii],data_range=(ref[ii].max()-ref[ii].min()))
         psnr[ii] = peak_signal_noise_ratio(ref[ii],rec[ii],data_range=(ref[ii].max()-ref[ii].min()))
-        vif[ii] =  vifp(ref[ii],rec[ii])
+        vif[ii] =  vifp(ref[ii],rec[ii],sigma_nsq = 0.4)
 
     return ssim,psnr,vif
