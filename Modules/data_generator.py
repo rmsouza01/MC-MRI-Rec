@@ -43,9 +43,9 @@ class DataGenerator(keras.utils.Sequence):
 	def __data_generation(self, batch_indexes):
 		'Generates data containing batch_size samples' # X : (n_samples, *dim, n_channels)
 		# Initialization
-		X = np.empty((self.batch_size, self.dim[0],self.dim[1], self.n_channels))
-		mask = np.empty((self.batch_size, self.dim[0],self.dim[1]))
-		y1 = np.empty((self.batch_size, self.dim[0],self.dim[1], self.n_channels))
+		X = np.zeros((self.batch_size, self.dim[0],self.dim[1], self.n_channels))
+		mask = np.zeros((self.batch_size, self.dim[0],self.dim[1]))
+		y1 = np.zeros((self.batch_size, self.dim[0],self.dim[1], self.n_channels))
 
 		# Generate data
 		for ii in range(batch_indexes.shape[0]):
@@ -62,7 +62,6 @@ class DataGenerator(keras.utils.Sequence):
 				else:
 					idx = int((kspace.shape[2] - self.dim[1])/2)
 					X[ii,:,:,:] = kspace[self.crop[0]+file_slice,:,idx:-idx,:]
-		X[:,:,145:,:] = 0 # Explicit zero-filling. Hard coded here for the case of 85% sampling in the slice-encode direction and 170 slices. Could be more generic
 		aux = np.fft.ifft2(X[:,:,:,::2]+1j*X[:,:,:,1::2],axes = (1,2))
 		y1[:,:,:,::2] = aux.real
 		y1[:,:,:,1::2] = aux.imag
@@ -76,7 +75,7 @@ class DataGenerator(keras.utils.Sequence):
 		X[:,:,:,::2] = aux2.real
 		X[:,:,:,1::2] = aux2.imag
 		norm = np.abs(aux2).max(axis = (1,2,3),keepdims = True) # Normalize using the maximum absolute value across channels.
-                                                                # Could to be improved
+                                                                # Could be improved
       
         
 		y1 = y1/norm  # Normalized fully sampled multi-channel reference. Could be converted to root sum of squares.
