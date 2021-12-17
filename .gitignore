@@ -7,3 +7,4 @@ __pycache__
 *.DS_Store
 JNotebooks/.ipynb_checkpoints
 JNotebooks/*/.ipynb_checkpoints
+.vscode
