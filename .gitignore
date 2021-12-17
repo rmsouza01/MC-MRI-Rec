@@ -8,3 +8,4 @@ __pycache__
 JNotebooks/.ipynb_checkpoints
 JNotebooks/*/.ipynb_checkpoints
 .vscode
+*.egg-info
