@@ -72,19 +72,3 @@ reconstructing images acquired using coils with different number of channels wil
 
 More details about the challenge are available at the [challenge webpage](https://sites.google.com/view/calgary-campinas-dataset/mr-reconstruction-challenge) If you have any question or doubts, please contact Dr. Roberto Souza (roberto.medeirosdeso@ucalgary.ca). He should be able to answer them and potentially add them to the FAQ page in the website.
 
-
-## Updates
-
-- 04 August 2020
-   - Included script to generate plots and html files for the challenge website.
-- 27 February 2020
-   - Added sampling masks for the different matrix sizes (218x170, 218x174, 218x180).
-
-- 26 February 2020
-   - Added explicit zero-filling in the slice-encoded direction after 85% in the slice-encode direction (i.e, int(np.ceil(0.85*Nz))).
-
-
-
-
-
-
