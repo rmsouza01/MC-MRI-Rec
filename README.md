@@ -1,5 +1,6 @@
 # Multi-channel MR Image Reconstruction Challenge (MC-MRRec)
 
+
 ## Summary
 
 Magnetic resonance (MR) is a sensitive diagnostic imaging modality that allows specific investigation of the
@@ -40,18 +41,10 @@ Also by having two separate tracks, we expect to be able to quantify whether a m
 reconstructing images acquired using coils with different number of channels will have a decreased performance
 (if any) compared to a more specific model.
 
-## Getting Started
-* Create a new enviornment and install the requirements in `./requirements.txt`
-* Execute `python setup.py develop` in this directory to add the project directory to your PYTHONPATH environment variable
-* Download the data from the [MR Reconstruction Challenge](https://sites.google.com/view/calgary-campinas-dataset/mr-reconstruction-challenge) website.
-* Extract data into the ./Data folder. Alternatively, extract the data at your preferred location and assign the `USER_SPECIFIED_DATA_PATH` variable in `./mrrec/constants.py` module to that directory. 
-* Review JNotebooks for examples of how to use provided sample `DataGenerator` and baseline models. 
-* Develop your own model for one
-
 ## Repository Structure
 
    - Data - Contains the sampling pattern masks for R = 5 and R = 10;
-   - mrrec - Python modules to help load and process the data;
+   - Modules - Python modules to help load and process the data;
    - JNotebooks
       - getting-started: Scripts illustrating how to load, visualize, and apply undersampling masks to the data. It also illustrates a simple image generator. 
       - evaluation-system: Scripts for metrics computation and ranking of different submissions. Statistical analysis script will be **included soon**.
