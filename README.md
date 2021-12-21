@@ -1,8 +1,12 @@
 # Multi-Coil MRI (MC-MRI) Reconstruction  Challenge 
 
+
+## 12-channel (source domain)
+
 ![12-channel](./Data/Samples/sample_track01_12_channel.png)
 
 
+## 32-channel (target domain)
 ![32-channel](./Data/Samples/sample_track02_32_channel.png)
 
 ## Summary
