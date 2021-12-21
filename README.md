@@ -1,4 +1,9 @@
-# Multi-channel MR Image Reconstruction Challenge (MC-MRRec)
+# Multi-Coil MRI (MC-MRI) Reconstruction  Challenge 
+
+![12-channel](./Data/Samples/sample_track01_12_channel.png)
+
+
+![32-channel](./Data/Samples/sample_track02_32_channel.png)
 
 ## Summary
 
@@ -16,8 +21,8 @@ Making it ten times faster would reduce the exam time to nearly 36 seconds and t
  Deep learning reconstruction are divided in four groups: k-space-domain, image-domain, domain-transform, and hybrid k-space/image-domains
 learning. At the moment, there is no clear winner among these proposed models. That happens in part due to the 
 lack of benchmark datasets that allow fair comparisons. The [fastMRI](https://fastmri.org/) initiative is one good step
-in that direction. Our challenge is a complimentary initiative that provides
-3D brain data. Working with 3D data allows you to undersample in both the phase-encoded and the slice-encoded directions (i.e. sparser data),
+in that direction,. Our challenge is a complimentary initiative that provides
+high-resolutuon 3D brain data. Working with 3D data allows you to undersample in both the phase-encoded and the slice-encoded directions (i.e. sparser data),
 which potentially allows to further undersample k-space during acquisition.   Most works
 so far investigated models that are specific to a coil with a given number of channels. Our challenge tackles this
 issue. The goals of this challenge are:
