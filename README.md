@@ -68,6 +68,14 @@ reconstructing images acquired using coils with different number of channels wil
       - zero-filled-baseline: Zero-filled reconstruction baseline for the challenge. Files are saved in the same format as the challenge submission format.
       - unet-baseline (**pending**): U-net reconstruction baseline.		
 
+## Public Submissions' Respositories
+
+    - [Baseline models](https://github.com/rmsouza01/CD-Deep-Cascade-MR-Reconstruction)
+    - [ResoNNance](https://github.com/directgroup/direct)
+    - [The Enchanted](https://github.com/amritkumar9595/the-enchanted-MC-MRRec)
+    - [TUMRI](https://github.com/tum-ri/mcmrireconz
+    - [M-L UNICAMP](https://github.com/alelopes/hybrid-multipath-reconstruction-network)
+
 ## Questions?
 
 More details about the challenge are available at the [challenge webpage](https://sites.google.com/view/calgary-campinas-dataset/mr-reconstruction-challenge) If you have any question or doubts, please contact Dr. Roberto Souza (roberto.medeirosdeso@ucalgary.ca). He should be able to answer them and potentially add them to the FAQ page in the website.
